@@ -1,103 +1,78 @@
-# AI Text Classification
+# AI Text Detector
 
-This project is designed to classify texts as AI-related or non-AI-related using a Support Vector Machine (SVM) classifier. The classifier is trained on a sample dataset of AI-related and non-AI-related texts and uses TF-IDF vectorization to convert text data into numerical features.
+This project is an AI text detector that classifies text as either related to AI or not. It uses a Support Vector Machine (SVM) classifier trained on a sample dataset and provides a web interface using Streamlit.
 
 ## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Data](#data)
-- [Model](#model)
-- [Testing](#testing)
-- [Functionality](#functionality)
 - [Contributing](#contributing)
 - [License](#license)
 
+## Introduction
+
+The AI Text Detector is a simple machine learning application that distinguishes between AI-related texts and non-AI-related texts. It is built using Python's scikit-learn library for the SVM classifier and Streamlit for the web interface.
+
+## Features
+
+- Train an SVM classifier on sample data.
+- Classify text as AI-related or not.
+- Display the classification result.
+- Show the sample data distribution in a pie chart.
+- Update the data distribution dynamically based on the classification results.
+
 ## Installation
 
-1. **Clone the repository:**
+1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/ai-text-classification.git
-    cd ai-text-classification
+    git clone https://github.com/yourusername/ai-text-detector.git
+    cd ai-text-detector
     ```
 
-2. **Create a virtual environment:**
+2. Create a virtual environment and activate it:
     ```bash
-    python -m venv venv
+    python -m venv env
+    source env/bin/activate  # On Windows use `env\Scripts\activate`
     ```
 
-3. **Activate the virtual environment:**
-    - On Windows:
-        ```bash
-        .\venv\Scripts\activate
-        ```
-    - On macOS and Linux:
-        ```bash
-        source venv/bin/activate
-        ```
-
-4. **Install the required packages:**
+3. Install the required packages:
     ```bash
     pip install -r requirements.txt
     ```
 
 ## Usage
 
-1. **Train the model:**
-    Run the Python script to train the SVM classifier:
+1. Run the Streamlit application:
     ```bash
-    python train.py
+    streamlit run app_UI.py
     ```
 
-2. **Make predictions:**
-    Use the `predict_ai` function in the script to predict whether a given text is AI-related or not.
+2. Open your web browser and go to `http://localhost:8501` to interact with the AI Text Detector.
 
-## Data
+### Code Explanation
 
-The dataset consists of two categories of texts:
-- **AI-related texts:** Examples related to machine learning, supervised and unsupervised learning, etc.
-- **Non-AI-related texts:** General sentences unrelated to AI.
+- **Training the Model**: The SVM classifier is trained on a small dataset of AI-related and non-AI-related texts.
+- **Predicting Text**: The classifier predicts whether an input text is AI-related or not.
+- **Dynamic Chart**: The distribution of AI and non-AI texts is shown in a pie chart and updates dynamically based on user input.
 
-You can replace the sample dataset with your own data in the script.
+### Example
 
-## Model
-
-The model uses:
-- **TF-IDF Vectorization:** To convert text data into numerical features.
-- **Support Vector Machine (SVM):** A popular supervised learning algorithm for classification.
-
-## Testing
-
-The script splits the dataset into training and testing sets (80% training, 20% testing) and evaluates the model's accuracy on the test set.
-
-## Functionality
-
-### Predicting AI-related Texts
-
-You can use the `predict_ai` function to predict if a text is AI-related or not. Here is an example of how to use this function:
-
-```python
-example_texts = ["Classification is a supervised learning technique",
-                 "My name is John Doe",
-                 "Clustering is an unsupervised learning technique"]
-
-for text in example_texts:
-    print(text, "->", predict_ai(text))
-```
+1. **Model Information**: Displays the accuracy of the trained model.
+2. **Sample Data Distribution**: Shows the initial distribution of AI and non-AI texts.
+3. **Classify Text**: Enter text to classify and see the updated distribution chart.
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and create a pull request to contribute to the project.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -am 'Add new feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Create a new pull request.
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
-
-This `README.md` file provides detailed instructions on how to set up, use, and contribute to your AI text classification project. Make sure to replace `https://github.com/yourusername/ai-text-classification.git` with the actual URL of your Git repository.
