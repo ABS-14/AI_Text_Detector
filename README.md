@@ -27,8 +27,7 @@ The AI Text Detector is a simple machine learning application that distinguishes
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/ai-text-detector.git
-    cd ai-text-detector
+    git clone https://github.com/ABS-14/AI_Text_Detector
     ```
 
 2. Create a virtual environment and activate it:
